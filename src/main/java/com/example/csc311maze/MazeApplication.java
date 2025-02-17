@@ -1,4 +1,5 @@
 package com.example.csc311maze;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -15,8 +17,6 @@ public class MazeApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MazeApplication.class.getResource("mazeView.fxml"));
         Parent root = fxmlLoader.load();
-        MazeController controller = fxmlLoader.getController();
-
         Image mazeImage = new Image(new FileInputStream("src/main/resources/maze.png"));
 
         ImageView mazeView = new ImageView(mazeImage);
@@ -27,17 +27,14 @@ public class MazeApplication extends Application {
         mazeView.setPreserveRatio(true);
 
 
-
-        FlowPane pane = new FlowPane(root, mazeView );
+        FlowPane pane = new FlowPane(root, mazeView);
 
         pane.setHgap(3);
         System.out.println(getClass().getResource("maze.png"));
 
 
-
         Scene scene = new Scene(pane, 800, 600);
         scene.getStylesheets().add(MazeApplication.class.getResource("mazeStyle.css").toExternalForm());
-
 
 
         stage.setTitle("Robot");
