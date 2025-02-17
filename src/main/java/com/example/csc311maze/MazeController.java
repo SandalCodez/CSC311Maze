@@ -19,8 +19,7 @@ public class MazeController {
     @FXML
     private Button mazeButton2;
 
-    @FXML
-    private ImageView m2Robot;
+
 
 
 
