@@ -17,23 +17,11 @@ public class MazeApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MazeApplication.class.getResource("mazeView.fxml"));
         Parent root = fxmlLoader.load();
-        Image mazeImage = new Image(new FileInputStream("src/main/resources/maze.png"));
 
-        ImageView mazeView = new ImageView(mazeImage);
-        mazeView.setX(0);
-        mazeView.setY(0);
-        mazeView.setFitWidth(600);
-        mazeView.setFitHeight(600);
-        mazeView.setPreserveRatio(true);
+        
 
 
-        FlowPane pane = new FlowPane(root, mazeView);
-
-        pane.setHgap(3);
-        System.out.println(getClass().getResource("maze.png"));
-
-
-        Scene scene = new Scene(pane, 800, 600);
+        Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(MazeApplication.class.getResource("mazeStyle.css").toExternalForm());
 
 
